@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sheila ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle, #26051f, #05020b);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: Georgia, serif;
+            color: white;
+        }
+
+        h1 {
+            color: #ff65ae;
+            text-shadow: 0 0 15px #ff1493;
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+
+        .flower {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            animation: sway 4s ease-in-out infinite;
+        }
+
+        .petal {
+            position: absolute;
+            width: 75px;
+            height: 110px;
+            background: linear-gradient(#ffb0d5, #ff1689, #a80057);
+            border-radius: 50%;
+            left: 72px;
+            top: 0;
+            transform-origin: 50% 100%;
+            box-shadow: 0 0 20px #ff1493;
+        }
+
+        .petal:nth-child(1) { transform: rotate(0deg); }
+        .petal:nth-child(2) { transform: rotate(45deg); }
+        .petal:nth-child(3) { transform: rotate(90deg); }
+        .petal:nth-child(4) { transform: rotate(135deg); }
+        .petal:nth-child(5) { transform: rotate(180deg); }
+        .petal:nth-child(6) { transform: rotate(225deg); }
+        .petal:nth-child(7) { transform: rotate(270deg); }
+        .petal:nth-child(8) { transform: rotate(315deg); }
+
+        .center {
+            position: absolute;
+            width: 65px;
+            height: 65px;
+            background: #ff1744;
+            border-radius: 50%;
+            top: 78px;
+            left: 78px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 0 30px #ff1744;
+            z-index: 2;
+        }
+
+        .stem {
+            width: 9px;
+            height: 190px;
+            background: linear-gradient(#00ff77, #075d2b);
+            margin: -5px auto 0;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #00ff77;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 65px;
+            height: 30px;
+            background: #00d66b;
+            border-radius: 100% 0 100% 0;
+            box-shadow: 0 0 12px #00ff77;
+        }
+
+        .leaf.left {
+            top: 350px;
+            left: calc(50% - 75px);
+            transform: rotate(15deg);
+        }
+
+        .leaf.right {
+            top: 410px;
+            left: calc(50% + 10px);
+            transform: rotate(190deg);
+        }
+
+        .message {
+            margin-top: 30px;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .message h2 {
+            color: #ff80bd;
+            margin-bottom: 15px;
+        }
+
+        .message p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 14px 25px;
+            background: #ff1689;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff1689;
+        }
+
+        button:hover {
+            background: #ff55aa;
+        }
+
+        #surprise {
+            display: none;
+            margin: 20px;
+            color: #ffb0d5;
+            font-size: 19px;
+            text-align: center;
+            animation: appear 1s ease;
+        }
+
+        .floating {
+            position: absolute;
+            color: #ff65ae;
+            animation: float 7s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes appear {
+            from { opacity: 0; transform: scale(0.7); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>For My Sheila ❤️</h1>
+
+<div class="flower">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+
+    <div class="center">♥️</div>
+</div>
+
+<div class="stem"></div>
+<div class="leaf left"></div>
+<div class="leaf right"></div>
+
+<div class="message">
+    <h2>You Are Special ❤️</h2>
+
+    <p>
+        You make my world brighter<br>
+        just by being in it.<br>
+        No matter the distance,<br>
+        you will always have a special<br>
+        place in my heart. ❤️
+    </p>
+
+    <button onclick="showLove()">
+        Open My Heart 💗
+    </button>
+
+    <div id="surprise">
+        🌹 You make my world bloom with love. 🌹
+        <br><br>
+        Forever special, Sheila. ❤️
+    </div>
+</div>
+
+<script>
+    function showLove() {
+        document.getElementById("surprise").style.display = "block";
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+
+        heart.className = "floating";
+        heart.innerHTML = "♥️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+        heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 9000);
+    }
+
+    setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
